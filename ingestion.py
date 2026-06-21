@@ -1,4 +1,32 @@
-import os
+import pandas as pd
+from config import logger
+
+def read_employee_file(path):
+    logger.info("Reading employee file")
+
+    df = pd.read_csv(path)
+
+    logger.info(f"Employee records loaded: {len(df)}")
+
+    print(df.head())
+
+    return df
+
+
+def read_department_file(path):
+    logger.info("Reading department file")
+
+    df = pd.read_csv(path)
+
+    logger.info(f"Department records loaded: {len(df)}")
+
+    print(df.head())
+
+    return df
+
+
+
+''' import os
 from typing import Any
 
 import pandas as pd
@@ -40,31 +68,4 @@ def read_department_file(path: str) -> pd.DataFrame:
     df = _read_csv(path)
     logger.info("Department records loaded: %d", len(df))
     print(df.head())
-    return df
-
-
-'''import pandas as pd
-from config import logger
-
-def read_employee_file(path):
-    logger.info("Reading employee file")
-
-    df = pd.read_csv(path)
-
-    logger.info(f"Employee records loaded: {len(df)}")
-
-    print(df.head())
-
-    return df
-
-
-def read_department_file(path):
-    logger.info("Reading department file")
-
-    df = pd.read_csv(path)
-
-    logger.info(f"Department records loaded: {len(df)}")
-
-    print(df.head())
-
-    return df'''
+    return df '''
